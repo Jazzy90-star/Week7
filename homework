@@ -1,0 +1,157 @@
+console.log ("1.Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93. Programmatically subtract the value of the first element in the array from the value in the last element of the array. Do not use numbers to reference the last element, find it programmatically ages[7] - ages[0] is not allowed! Add a new age to your array and repeat the step above to ensure it is dynamic. (works for arrays of different lengths). Use a loop to iterate through the array and calculate the average age.")
+
+let ages = [3, 9, 23, 64, 2, 8, 28, 93] 
+
+//in this section, I am subtracting the last number (ages.lenght - 1) and the first number (ages[0]) to determine the age (90)
+let result = ages[(ages.length - 1)] - ages[0];
+console.log(result);
+
+//In this section, i am using .push to add 50 to the end of my array and taking the end of the array (ages.length) and subtracting it from the beginning of the array (ages[0])
+ages.push(50); 
+let resultOne = ages[(ages.length - 1)] - ages[0];
+console.log(resultOne);
+
+//in this section i am declaring sum as a variable so i can use it to determine the average age. I let i be 0 and make i less than the ages.length. then i take the sum += ages to get the total length. Then i delcare average as a variable to figure out the total of the added numbers and divide that by the length of the array.
+let sum = 0;
+for (let i = 0; i < ages.length; i++) {
+    sum += ages[i];
+}
+let average = sum / ages.length;
+console.log(average);
+
+console.log("2.Create an array called names that contains the following values: 'Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'. Use a loop to iterate through the array and calculate the average number of letters per name.Use a loop to iterate through the array again and concatenate all the names together, separated by spaces")
+
+// in this section i put the names in an array. Then i declared a variable avg for future use. I use names.length to get the length of all the names.  then i declared "stuff" to get the avg by the length of the names.
+let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob']
+let avg = 0;
+for ( let i = 0; i < names.length; i++) {
+    avg += names[i].length;
+}   
+let stuff = avg / names.length;
+console.log(`${stuff}`);
+console.log(' ' + names + ' ');
+
+
+
+console.log ("3.How do you access the last element of any array?")
+
+"One way i can access the end of an array is by using ages.length -1. since arrays start at 0, you have to put -1 at the end so you dont throw an error. Antother way to access the last element of an array is to use .pop. .pop calls on the last element of the array and returns the value to whoever called it. Another way to access the last number of an array is to count how many elements you have and just do array[numberofelements]. This can be used for small projects but anything with a bigger amount of elements would be impossible"  
+
+
+console.log("4.How do you access the first element of any array?")
+
+"There are several ways i can access the first number of an array. The first way to call on the first element of an array is using 0. since javascript arrays start at 0 you can use names[0]."
+
+console.log("5.Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.")
+
+//I declared nameLengths as a new array. Then set up my iteration by defining i. after that i pushed my new array into the old array. then i logged it in the console in a concatonation so that the names and the length would be together. 
+
+let nameLengths = [];
+for (i = 0; i < names.length; i++) {
+nameLengths.push(names[i].length);
+console.log(nameLengths[i] + ' ' + names[i])
+}
+
+console.log("6.Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.")
+
+//I declared orange as variable. Then i made a for loop with iterations. then i added nameLengths to orange for each iteration. Last, i console.logged orange to get the answer.
+let orange = 0;
+for (let i = 0; i < nameLengths.length; i++) {
+    orange += nameLengths[i];
+}
+console.log(orange);  
+
+console.log("7.Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello'")
+
+//I created the function hola and set the parameters to word and n. then i asked to return the word "n" times. After that, i added the variable hallo and specificied what word i want and how many times. Then i console.logged it to get the result.
+function hola (word, n){
+    return word.repeat(n);
+}
+let hallo = hola('bonjour', 4);
+console.log(hallo)
+
+console.log("8.Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.")
+
+// First i made a function fullName for the first and last name. Then i returned the firstname and last name. i created a new variable called strangerName and referenced the function and added the first and second name string. then i referenced the strangerName variable in the console.log to show the result.
+function fullName (firstName, lastName) {
+        return `${firstName} ${lastName}`;   
+}
+let strangerName = fullName ('Bob', 'Dylan');
+console.log(strangerName)
+
+
+console.log("9.Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.")
+
+// I declared a new variable and defined the array. Then i created a new funciton and defined the iteration. Then i added the numbers of the array to sumNew. i console.logged if sumNew is bigger than 100 and then called the function to determine if it was true or false. 
+sumNew = 0;
+arrayNew = [20, 40, 60, 80];
+
+ function hello() {
+    for ( let i = 0; i < arrayNew.length; i++) {
+         sumNew += arrayNew[i];}
+
+        console.log(sumNew > 100);
+    }
+    hello()
+
+console.log("10.Write a function that takes an array of numbers and returns the average of all the elements in the array.")
+
+// I declared hi as a value of 0 so i can use it later for the average. then i created a new array with new numbers. I created a for loop and defined i and included the length of the new array. Then i took and my variable hi and added it to the new array iteration. last, i took hi and divided it by the array to get the average and console.logged it.
+hi = 0;
+newArray = [15, 20, 50, 19, 25, 12]; {
+    for ( let i = 0; i < newArray.length; i++) {
+        hi += newArray[i];
+    }   
+    let numberOfElements = hi / newArray.length;
+    console.log(`${numberOfElements}`);
+}
+
+
+console.log("11.Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.")
+
+//I started off declaring two variables (averageOne and averageTwo) and two arrays. then i created a function and made a for loop for each array. in each for loop i compared the variable with the array(ex. averageOne is compared to arrayOne). Then i delcared two more variables (sumOne and sumTwo) to figure out the average of both arrays. then i console.log the sumOne and sumTwo variables. Last, i called up the doesItWork function to determine if it was true or false. 
+averageOne = 0;
+averageTwo = 0;
+arrayOne = [5, 10, 15, 20];
+arrayTwo = [2, 4, 6, 8];
+
+ function doesItWork() {
+    for ( let i = 0; i < arrayOne.length; i++) {
+         averageOne += arrayOne[i];}
+    for ( let i = 0; i < arrayTwo.length; i++){
+        averageTwo += arrayTwo[i];};
+
+        let sumOne = averageOne / arrayOne.length;
+        let sumTwo = averageTwo / arrayTwo.length;
+    
+        console.log(sumOne > sumTwo);
+    }
+    doesItWork()
+
+
+console.log("12.Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.")
+
+// I declared moneyInPocket as a variable. Then i made a function willBuyDrink with the parameters of isHotOutside and moneyInPocket. I then made an if statement saying if it is hot outside and there is money in pocket over 10.50, return true. If the previous statement proves false, it goes to else and returns false. Then i did a console.log to call the function willBuyDrink and running it as true if both conditions are met.
+let moneyInPocket = 15.00;
+function willBuyDrink(isHotOutside, moneyInPocket) {
+        if (isHotOutside && moneyInPocket > 10.50){
+            return 'true';
+        }else{
+            return 'false';
+        }
+    }
+console.log(willBuyDrink(true, moneyInPocket));
+
+
+console.log("13.Create a function of your own that solves a problem. In comments, write what the function does and why you created it.")
+
+//
+let bankBalance = 9.00
+function shouldIBuyCoffee (costOfCoffee, bankBalance) {
+    if (costOfCoffee && bankBalance > 9.50){
+    return 'Go Buy Coffee Now!';
+}else{
+    return'Dont Buy Coffee, You Cannot Afford It!';
+}
+}
+console.log(shouldIBuyCoffee(true, bankBalance))
